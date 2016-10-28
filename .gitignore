@@ -1,0 +1,13 @@
+Debug/
+Release/
+obj/
+bin/
+*.exe
+*.ilk
+*.pdb
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.VC.db
+*.opendb
+.vs/
