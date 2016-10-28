@@ -30,7 +30,7 @@ workspace "libfathmath"
         defines { "FM_ARCH_64" }
 
 project "tests"
-    language "C"
+    language "C++"
     targetdir "."
     kind "ConsoleApp"
 

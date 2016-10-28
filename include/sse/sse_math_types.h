@@ -5,17 +5,21 @@
 #error Only fathmath.h should be directly included.
 #endif
 
-typedef __m128 fm_float;
-typedef __m128i fm_int;
-typedef __m128 fm_float4;
-typedef __m128i fm_int4;
-typedef __m128 fm_mask;
+namespace ftm {
+    typedef __m128 quad;
+    typedef __m128i quadi;
 
-union fm_quad_float_int {
-    uint32 ints[4];
-    float32 floats[4];
-    fm_int4 int4;
-    fm_float4 float4;
-};
+    typedef __m128 single;
+    typedef __m128 mask;
+
+    namespace internal {
+        union quad_float_int {
+            uint32 m_ints[4];
+            float32 m_floats[4];
+            quadi m_int4;
+            quad m_float4;
+        };
+    }
+}
 
 #endif
