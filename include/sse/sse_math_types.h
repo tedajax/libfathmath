@@ -8,9 +8,30 @@
 namespace ftm {
     typedef __m128 quad;
     typedef __m128i quadi;
-
-    typedef __m128 single;
     typedef __m128 mask;
+    typedef __m128 single;
+
+#ifdef FM_SIMD_PASS_IN_REG
+    typedef const quad quad_param;
+    typedef const quadi quadi_param;
+    typedef const mask mask_param;
+    typedef const single single_param
+
+    typedef const class scalar scalar_param;
+    typedef const class vec4 vec4_param;
+    typedef const class quaternion quaternion_param;
+    typedef const class dual_quaternion dual_quaternion_param;
+#else
+    typedef const quad& quad_param;
+    typedef const quadi& quadi_param;
+    typedef const mask& mask_param;
+    typedef const single& single_param
+
+    typedef const class scalar& scalar_param;
+    typedef const class vec4& vec4_param;
+    typedef const class quaternion& quaternion_param;
+    typedef const class dual_quaternion& dual_quaternion_param;
+#endif
 
     namespace internal {
         union quad_float_int {

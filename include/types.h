@@ -24,29 +24,4 @@ typedef double float64;
 typedef unsigned int uint;
 typedef uint8 byte;
 
-// Default to 0x40, -DFM_SSE_VER <version> to override
-#ifndef FM_SSE_VER
-#define FM_SSE_VER 0x40
-#endif
-
-#if FM_SSE_VER >= 0x10
-#include <xmmintrin.h>
-#endif
-
-#if FM_SSE_VER >= 0x20
-#include <emmintrin.h>
-#endif
-
-#if FM_SSE_VER >= 0x30
-#include <pmmintrin.h>
-#endif
-
-#if FM_SSE_VER >= 0x31
-#include <tmmintrin.h>
-#endif
-
-#if FM_SSE_VER >= 0x40
-#include <smmintrin.h>
-#endif
-
-#endif
+#endif // FM_TYPES_H

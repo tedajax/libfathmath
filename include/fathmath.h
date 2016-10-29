@@ -22,12 +22,14 @@
 
 #if FM_SSE_VER >= 0x20
 #   include "sse/sse_math_funcs.inl"
+#   include "sse/sse_scalar.inl"
 #   include "sse/sse_vector4.inl"
 #   include "sse/sse_matrix3.inl"
 #   include "sse/sse_quaternion.inl"
 #   include "sse/sse_matrix4.inl"
 #else
 #   include "fpu/fpu_math_funcs.inl"
+#   include "fpu/fpu_scalar.inl"
 #   include "fpu/fpu_vector4.inl"
 #   include "fpu/fpu_matrix3.inl"
 #   include "fpu/fpu_quaternion.inl"
@@ -36,6 +38,7 @@
 
 #include "math_funcs.inl"
 
+#include "scalar.inl"
 #include "vector4.inl"
 #include "matrix3.inl"
 #include "matrix4.inl"
